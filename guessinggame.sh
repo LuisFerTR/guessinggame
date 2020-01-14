@@ -2,7 +2,7 @@
 # File: guessinggame.sh
 
 function adivina {
-    cant_archivos=$(find -type f $PWD | wc -l)
+    cant_archivos=$(find $PWD -type f | wc -l)
     
     echo "Adivina la cantidad de archivos de la carpeta: "
     read respuesta
