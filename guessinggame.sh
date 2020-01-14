@@ -3,12 +3,13 @@
 
 function adivina {
     cant_archivos=$(find $PWD -type f | wc -l)
-    
-    echo "Adivina la cantidad de archivos de la carpeta: "
-    read respuesta
+    respuesta=0
 	
     while [[ $respuesta =~ ^[0-9]+$ ]] && [[ $respuesta -ne $cant_archivos ]]
     do
+	echo "Adivina la cantidad de archivos de la carpeta: "
+	read respuesta
+
 	if [[ $respuesta -gt $cant_archivos ]]
 	then
 	    echo "Hay menos archivos. Intenta de nuevo."
@@ -19,10 +20,7 @@ function adivina {
 	
 	else
 	    echo "¡Has acertado, felicidades! :D"
-	fi
-
-	echo "Adivina la cantidad de archivos de la carpeta: "
-        read respuesta
+      	fi
     done
 }
 
